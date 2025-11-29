@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0A1F44"/>
+      <stop offset="100%" stop-color="#0DB36D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <text x="600" y="320" font-family="Montserrat, sans-serif" font-size="72" fill="white" text-anchor="middle">Saudi2030X</text>
+  <text x="600" y="380" font-family="Montserrat, sans-serif" font-size="28" fill="white" text-anchor="middle">Vision. Technology. Power.</text>
+</svg>
