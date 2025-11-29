@@ -4,235 +4,27 @@
   <meta charset="UTF-8" />
   <title>Saudi2030X – Vision. Technology. Power.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Saudi2030X — منصة ذكية تربط اللوجستيات، الطاقة، المعدات، وتداول الذهب المدعوم بالذكاء الاصطناعي." />
+  <meta name="theme-color" content="#0A1F44" />
 
-  <!-- Google Fonts (اختياري لكن يجمّل الخطوط) -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Saudi2030X – Vision. Technology. Power." />
+  <meta property="og:description" content="منصة ذكية متكاملة تواكب رؤية السعودية 2030." />
+  <meta property="og:image" content="/assets/preview.svg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saudi2030X – Vision. Technology. Power." />
+  <meta name="twitter:description" content="منصة ذكية متكاملة تواكب رؤية السعودية 2030." />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --green: #0DB36D;
-      --blue: #0A1F44;
-      --neon: #05C4FF;
-      --bg: #F4F7FA;
-      --card: #FFFFFF;
-      --border-soft: #B6BEC8;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
-      background-color: var(--bg);
-      color: var(--blue);
-    }
-
-    header {
-      text-align: center;
-      padding: 120px 20px 80px;
-      background: linear-gradient(to bottom, #F4F7FA, #EBEFF2);
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 56px;
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    header h2 {
-      font-size: 20px;
-      margin-top: 10px;
-      color: var(--neon);
-      font-weight: 500;
-    }
-
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .lang-btn {
-      padding: 6px 12px;
-      border-radius: 20px;
-      border: 1px solid var(--border-soft);
-      background: white;
-      font-size: 13px;
-      cursor: pointer;
-      min-width: 44px;
-    }
-
-    .lang-btn.active {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-    }
-
-    .badge {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #6B7280;
-    }
-
-    .btn {
-      padding: 12px 26px;
-      border-radius: 8px;
-      margin: 12px 8px 0;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    .btn-primary {
-      background-color: var(--green);
-      color: white;
-    }
-
-    .btn-secondary {
-      background-color: white;
-      border: 2px solid var(--green);
-      color: var(--green);
-    }
-
-    section {
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    h2.section-title {
-      font-size: 32px;
-      margin-bottom: 18px;
-      text-align: center;
-    }
-
-    p.section-intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 30px;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      padding: 22px;
-      background: var(--card);
-      border-radius: 12px;
-      box-shadow: rgba(0,0,0,0.05) 0px 4px 12px;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .card strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 15px;
-    }
-
-    .roadmap-step {
-      margin: 18px 0;
-      padding: 18px 20px;
-      background: var(--card);
-      border-radius: 10px;
-      border-left: 5px solid var(--green);
-      font-size: 15px;
-    }
-
-    form input, form select, form textarea {
-      width: 100%;
-      padding: 11px;
-      margin: 8px 0 14px;
-      border: 1px solid var(--border-soft);
-      border-radius: 8px;
-      font-size: 14px;
-      font-family: inherit;
-    }
-
-    form textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    form button {
-      margin-top: 4px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: var(--blue);
-      color: white;
-      margin-top: 60px;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      header {
-        padding-top: 90px;
-      }
-      header h1 {
-        font-size: 40px;
-      }
-      .grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      .grid-2, .grid-4 {
-        grid-template-columns: 1fr;
-      }
-      header h1 {
-        font-size: 34px;
-      }
-      header h2 {
-        font-size: 17px;
-      }
-      .lang-switch {
-        top: 10px;
-        right: 10px;
-      }
-    }
-
-    /* Arabic mode */
-    .arabic body, .arabic {
-      font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
-    }
-
-    .rtl {
-      direction: rtl;
-      text-align: right;
-    }
-
-    .rtl h2.section-title,
-    .rtl p.section-intro {
-      text-align: center;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
@@ -373,11 +165,12 @@
         you can request early access to Saudi2030X.
       </p>
 
-      <form>
-        <input type="text" placeholder="Full Name" />
-        <input type="text" placeholder="Company" />
-        <input type="email" placeholder="Email" />
-        <select>
+      <form name="early-access" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="early-access">
+        <input type="text" name="name" placeholder="Full Name" />
+        <input type="text" name="company" placeholder="Company" />
+        <input type="email" name="email" placeholder="Email" />
+        <select name="sector">
           <option>Sector</option>
           <option>Logistics</option>
           <option>Energy</option>
@@ -385,7 +178,7 @@
           <option>Trading</option>
           <option>Investor</option>
         </select>
-        <textarea placeholder="Your message / use case"></textarea>
+        <textarea name="message" placeholder="Your message / use case"></textarea>
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </section>
@@ -402,7 +195,7 @@
       </p>
       <div class="card">
         تعمل Saudi2030X كطبقة بنية تحتية رقمية آمنة لتنظيم وتوثيق العمليات الواقعية في مجالات النقل،
-        المقاولات، الطاقة والتداول. من إثبات التسليم الإلكتروني (e-POD) وأنظمة منع سرقة الشحنات والمحروقات،
+        ال��قاولات، الطاقة والتداول. من إثبات التسليم الإلكتروني (e-POD) وأنظمة منع سرقة الشحنات والمحروقات،
         إلى محركات التحوّط والتداول الذكي في الذهب، تم تصميم المنصة لخدمة اقتصاد المستقبل.
       </div>
     </section>
@@ -435,13 +228,63 @@
       </div>
     </section>
 
-    <!-- TECHNOLOGY -->
+    <!-- CONTACT -->
     <section>
-      <h2 class="section-title">منظومة التقنيات الذكية</h2>
-      
+      <h2 class="section-title">انضم لمرحلة الوصول المبكر</h2>
+      <form name="early-access-ar" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="early-access-ar">
+        <input type="text" name="name" placeholder="الاسم الكامل" />
+        <input type="text" name="company" placeholder="اسم الشركة" />
+        <input type="email" name="email" placeholder="البريد الإلكتروني" />
+        <select name="sector">
+          <option>القطاع</option>
+          <option>اللوجستيات</option>
+          <option>الطاقة</option>
+          <option>المعدات الثقيلة</option>
+          <option>التداول</option>
+          <option>مستثمر</option>
+        </select>
+        <textarea name="message" placeholder="نبذة عن حالتك أو استخدامك المتوقع"></textarea>
+        <button class="btn btn-primary" type="submit">إرسال الطلب</button>
+      </form>
     </section>
-
   </main>
 
+  <footer id="footer">
+    © 2026 Saudi2030X – All Rights Reserved<br/>
+    Built in Saudi Arabia • Powered by AI • Inspired by Vision 2030
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      const en = document.getElementById('content-en');
+      const ar = document.getElementById('content-ar');
+      const btnEn = document.getElementById('btn-en');
+      const btnAr = document.getElementById('btn-ar');
+      const body = document.body;
+      const footer = document.getElementById('footer');
+
+      if (lang === 'en') {
+        en.classList.remove('hidden');
+        ar.classList.add('hidden');
+        btnEn.classList.add('active');
+        btnAr.classList.remove('active');
+        body.dir = 'ltr';
+        body.style.fontFamily = "'Montserrat', system-ui, -apple-system, sans-serif";
+        footer.innerHTML = "© 2026 Saudi2030X – All Rights Reserved<br/>Built in Saudi Arabia • Powered by AI • Inspired by Vision 2030";
+      } else {
+        en.classList.add('hidden');
+        ar.classList.remove('hidden');
+        btnEn.classList.remove('active');
+        btnAr.classList.add('active');
+        body.dir = 'rtl';
+        body.style.fontFamily = "'Tajawal', system-ui, -apple-system, sans-serif";
+        footer.innerHTML = "© 2026 Saudi2030X – جميع الحقوق محفوظة<br/>منصة سعودية • مدعومة بالذكاء الاصطناعي • مستلهمة من رؤية 2030";
+      }
+    }
+
+    // default: English
+    setLang('en');
+  </script>
 </body>
 </html>
