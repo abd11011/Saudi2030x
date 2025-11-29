@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saudi2030X – Vision. Technology. Power.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts (اختياري لكن يجمّل الخطوط) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #0DB36D;
+      --blue: #0A1F44;
+      --neon: #05C4FF;
+      --bg: #F4F7FA;
+      --card: #FFFFFF;
+      --border-soft: #B6BEC8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--blue);
+    }
+
+    header {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: linear-gradient(to bottom, #F4F7FA, #EBEFF2);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 56px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    header h2 {
+      font-size: 20px;
+      margin-top: 10px;
+      color: var(--neon);
+      font-weight: 500;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      background: white;
+      font-size: 13px;
+      cursor: pointer;
+      min-width: 44px;
+    }
+
+    .lang-btn.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .badge {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #6B7280;
+    }
+
+    .btn {
+      padding: 12px 26px;
+      border-radius: 8px;
+      margin: 12px 8px 0;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background-color: var(--green);
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: white;
+      border: 2px solid var(--green);
+      color: var(--green);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2.section-title {
+      font-size: 32px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    p.section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 22px;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: rgba(0,0,0,0.05) 0px 4px 12px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .roadmap-step {
+      margin: 18px 0;
+      padding: 18px 20px;
+      background: var(--card);
+      border-radius: 10px;
+      border-left: 5px solid var(--green);
+      font-size: 15px;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 11px;
+      margin: 8px 0 14px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    form button {
+      margin-top: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--blue);
+      color: white;
+      margin-top: 60px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      header {
+        padding-top: 90px;
+      }
+      header h1 {
+        font-size: 40px;
+      }
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-2, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 34px;
+      }
+      header h2 {
+        font-size: 17px;
+      }
+      .lang-switch {
+        top: 10px;
+        right: 10px;
+      }
+    }
+
+    /* Arabic mode */
+    .arabic body, .arabic {
+      font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
+    }
+
+    .rtl {
+      direction: rtl;
+      text-align: right;
+    }
+
+    .rtl h2.section-title,
+    .rtl p.section-intro {
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">AR</button>
+    </div>
+
+    <h1>Saudi2030X</h1>
+    <h2>Vision. Technology. Power.</h2>
+    <div class="badge">
+      Built in Saudi Arabia • Powered by AI • Inspired by Vision 2030
+    </div>
+
+    <button class="btn btn-primary">Join Early Access</button>
+    <button class="btn btn-secondary">Download Lite Paper</button>
+  </header>
+
+  <!-- ENGLISH CONTENT -->
+  <main id="content-en">
+    <!-- ABOUT -->
+    <section>
+      <h2 class="section-title">About Saudi2030X</h2>
+      <p class="section-intro">
+        Saudi2030X is a next-generation intelligent platform connecting smart logistics, heavy equipment,
+        solar energy systems, and AI-powered gold trading — all aligned with Saudi Vision 2030.
+      </p>
+      <div class="card">
+        Saudi2030X acts as a smart infrastructure layer to secure and digitize real-world operations
+        across logistics, construction, energy, and trading. From smart Proof of Delivery and anti-theft
+        systems to AI gold hedging engines, the platform is engineered for the next economy.
+      </div>
+    </section>
+
+    <!-- SECTORS -->
+    <section>
+      <h2 class="section-title">Core Sectors</h2>
+      <p class="section-intro">One unified platform, four powerful verticals.</p>
+
+      <div class="grid-4">
+        <div class="card">
+          <strong>Smart Logistics & Transport</strong>
+          Intelligent matching between shippers and carriers, real-time tracking, ETA predictions,
+          digital Proof of Delivery, and automated trip risk scoring.
+        </div>
+        <div class="card">
+          <strong>Heavy Equipment & Contracting</strong>
+          Digital layer for renting and monitoring heavy equipment usage and abuse, with verifiable
+          usage logs and performance analytics.
+        </div>
+        <div class="card">
+          <strong>Solar Energy & Infrastructure</strong>
+          Digital phase verification, performance monitoring, and contract-proofing for solar projects
+          from design to O&M.
+        </div>
+        <div class="card">
+          <strong>AI Gold Trading & Hedging</strong>
+          AI-powered strategies for trading and hedging gold, combining advanced candlestick logic,
+          volatility filters, and risk management models.
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section>
+      <h2 class="section-title">Intelligent Technology Stack</h2>
+      <p class="section-intro">
+        Saudi2030X is not just a platform — it is a layered intelligence system built on AI, blockchain, and IoT.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <strong>Smart e-POD (Proof of Delivery)</strong>
+          Digital signatures, GPS validation, multi-party approval, and immutable records anchored on-chain.
+        </div>
+        <div class="card">
+          <strong>Driver & Truck Legitimacy Engine</strong>
+          Automated checks on driver identity, license status, and truck compliance before loading and dispatch.
+        </div>
+        <div class="card">
+          <strong>Anti-Theft & Fuel Integrity System</strong>
+          AI models detect anomalies in routes, fuel consumption, and time patterns to flag potential fuel or cargo theft.
+        </div>
+        <div class="card">
+          <strong>Real-time ETA & Delay Prediction</strong>
+          Predictive models estimate arrival times to loading and offloading points with continuous recalibration.
+        </div>
+        <div class="card">
+          <strong>AI Trading & Hedging Engine for Gold</strong>
+          Algorithms built around candle logic, volatility, and hedging rules to support smart gold strategies.
+        </div>
+        <div class="card">
+          <strong>Cross-Sector Compliance Layer</strong>
+          Unified auditability and compliance across logistics, equipment, energy, and trading.
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKEN -->
+    <section>
+      <h2 class="section-title">Saudi2030X Token Utility</h2>
+      <p class="section-intro">
+        The native token powers access, verification, and advanced AI services across the Saudi2030X ecosystem.
+      </p>
+
+      <div class="card">
+        <ul>
+          <li>Access to AI gold hedging algorithms and dashboards</li>
+          <li>Payment for e-POD verifications and compliance checks</li>
+          <li>Enabling fuel integrity and anti-theft monitoring services</li>
+          <li>Unlocking enterprise analytics and API access</li>
+          <li>Staking to access premium and institutional-grade modules</li>
+        </ul>
+        <p style="font-size: 12px; color:#6B7280; margin-top:10px;">
+          The token is designed as a utility token supporting platform functions. It is not a share, security, or investment contract.
+        </p>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section>
+      <h2 class="section-title">Roadmap 2026</h2>
+
+      <div class="roadmap-step"><strong>Q1 2026:</strong> Logistics & Solar MVP launch.</div>
+      <div class="roadmap-step"><strong>Q2 2026:</strong> AI Anti-Theft & ETA prediction systems.</div>
+      <div class="roadmap-step"><strong>Q3 2026:</strong> Gold AI Trading Alpha release.</div>
+      <div class="roadmap-step"><strong>Q4 2026:</strong> Token launch & ecosystem integration.</div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <h2 class="section-title">Join Early Access</h2>
+      <p class="section-intro">
+        If you are a logistics operator, fleet owner, EPC contractor, energy developer, trader, or investor,
+        you can request early access to Saudi2030X.
+      </p>
+
+      <form>
+        <input type="text" placeholder="Full Name" />
+        <input type="text" placeholder="Company" />
+        <input type="email" placeholder="Email" />
+        <select>
+          <option>Sector</option>
+          <option>Logistics</option>
+          <option>Energy</option>
+          <option>Equipment</option>
+          <option>Trading</option>
+          <option>Investor</option>
+        </select>
+        <textarea placeholder="Your message / use case"></textarea>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ARABIC CONTENT -->
+  <main id="content-ar" class="hidden rtl">
+    <!-- ABOUT -->
+    <section>
+      <h2 class="section-title">عن Saudi2030X</h2>
+      <p class="section-intro">
+        Saudi2030X منصة ذكية من الجيل القادم تربط بين اللوجستيات الذكية، تأجير وتشغيل المعدات الثقيلة،
+        أنظمة الطاقة الشمسية، وتداول الذهب المدعوم بالذكاء الاصطناعي، ضمن إطار رؤية المملكة 2030.
+      </p>
+      <div class="card">
+        تعمل Saudi2030X كطبقة بنية تحتية رقمية آمنة لتنظيم وتوثيق العمليات الواقعية في مجالات النقل،
+        المقاولات، الطاقة والتداول. من إثبات التسليم الإلكتروني (e-POD) وأنظمة منع سرقة الشحنات والمحروقات،
+        إلى محركات التحوّط والتداول الذكي في الذهب، تم تصميم المنصة لخدمة اقتصاد المستقبل.
+      </div>
+    </section>
+
+    <!-- SECTORS -->
+    <section>
+      <h2 class="section-title">القطاعات الرئيسية</h2>
+      <p class="section-intro">منصة واحدة… وأربعة قطاعات قوية مترابطة.</p>
+
+      <div class="grid-4">
+        <div class="card">
+          <strong>اللوجستيات والنقل الذكي</strong>
+          مواءمة ذكية بين الشاحنين والناقلين، تتبّع لحظي، توقع وقت الوصول (ETA)، إثبات تسليم إلكتروني،
+          وتقييم آلي لمخاطر الرحلة.
+        </div>
+        <div class="card">
+          <strong>المعدات الثقيلة والمقاولات</strong>
+          طبقة رقمية لتأجير ومراقبة استخدام المعدات الثقيلة واكتشاف سوء الاستخدام، مع سجلات استخدام
+          وتحليلات أداء موثقة.
+        </div>
+        <div class="card">
+          <strong>الطاقة الشمسية والبنية التحتية</strong>
+          توثيق مراحل المشروع، مراقبة الأداء، وتثبيت الضمانات والعقود رقمياً لمشاريع الطاقة الشمسية
+          من التصميم حتى التشغيل والصيانة.
+        </div>
+        <div class="card">
+          <strong>تداول الذهب والتحوّط بالذكاء الاصطناعي</strong>
+          استراتيجيات تداول وتحوط في الذهب مبنية على خوارزميات الشموع، تذبذب الأسعار، وقواعد متقدّمة لإدارة المخاطر.
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section>
+      <h2 class="section-title">منظومة التقنيات الذكية</h2>
+      
+    </section>
+
+  </main>
+
+</body>
+</html>
